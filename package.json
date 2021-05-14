@@ -10,8 +10,14 @@
     "@types/node": "^12.20.13",
     "@types/react": "^17.0.5",
     "@types/react-dom": "^17.0.4",
+    "antd": "^4.15.5",
+    "chart.js": "^3.2.1",
+    "plotly.js": "^1.58.4",
     "react": "^17.0.2",
+    "react-chartjs-2": "^3.0.3",
     "react-dom": "^17.0.2",
+    "react-plotly.js": "^2.5.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "typescript": "^4.2.4",
     "web-vitals": "^1.1.2"
@@ -39,5 +45,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/chart.js": "^2.9.32",
+    "@types/react-plotly.js": "^2.2.4",
+    "@types/react-router-dom": "^5.1.7"
   }
 }
