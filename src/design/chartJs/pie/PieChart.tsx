@@ -1,8 +1,8 @@
 import React from "react";
-import { Bar } from "react-chartjs-2";
 import { DataProps } from "setType";
+import { Pie } from "react-chartjs-2";
 
-export default function BasicBar({ data }: DataProps) {
+export default function PieChart({ data }: DataProps) {
   const chartData = {
     labels: ["1", "2", "3"],
     datasets: [
@@ -15,7 +15,7 @@ export default function BasicBar({ data }: DataProps) {
   console.log(chartData);
   return (
     <div style={{ width: "25%", padding: "0 10px", display: "inline-block" }}>
-      <Bar type="bar" data={chartData} />
+      <Pie type="pie" data={chartData} />
     </div>
   );
 }
