@@ -14,7 +14,6 @@
     "antd": "^4.15.5",
     "canvasjs": "^1.8.3",
     "chart.js": "^3.2.1",
-    "gh-pages": "^3.1.0",
     "plotly.js": "^1.58.4",
     "react": "^17.0.2",
     "react-canvas-js": "^1.0.1",
@@ -55,6 +54,7 @@
   "devDependencies": {
     "@types/chart.js": "^2.9.32",
     "@types/react-plotly.js": "^2.2.4",
-    "@types/react-router-dom": "^5.1.7"
+    "@types/react-router-dom": "^5.1.7",
+    "gh-pages": "^3.1.0"
   }
 }
