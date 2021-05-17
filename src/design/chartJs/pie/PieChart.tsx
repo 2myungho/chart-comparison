@@ -12,9 +12,8 @@ export default function PieChart({ data }: DataProps) {
       },
     ],
   };
-  console.log(chartData);
   return (
-    <div style={{ width: "25%", padding: "0 10px", display: "inline-block" }}>
+    <div style={{ width: "15%", padding: "0 10px", display: "inline-block" }}>
       <Pie type="pie" data={chartData} />
     </div>
   );

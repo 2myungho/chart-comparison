@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import Plot from "react-plotly.js";
 import { Input, Form, Button, Checkbox } from "antd";
 import { Link } from "react-router-dom";
+import CanvasJSReact from "assets/canvasjs.react";
+var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
-export default function LineChart_plotly() {
+export default function LineChart_canvasJs() {
   const [point, setPoint] = useState(1);
   const [dataCnt, setDataCnt] = useState(0);
-  const [marker, setMarker] = useState("lines");
+  const [marker, setMarker] = useState("");
 
   const onPoint = (e: any) => {
     setPoint(e.target.value);
@@ -18,31 +19,27 @@ export default function LineChart_plotly() {
 
   const onChecked = (e: any) => {
     if (e.target.checked) {
-      setMarker("lines+markers");
+      setMarker("circle");
     } else {
-      setMarker("lines");
+      setMarker("");
     }
   };
 
-  let arrX: number[] = [];
-  let arrY: number[] = [];
+  let arrData: object[] = [];
   const [data, setData] = useState([]);
   let dataSave: any = [];
   const onSubmit = () => {
     for (let n: number = 0; n < point; n++) {
-      arrX = [];
-      arrY = [];
+      arrData = [];
       for (let i: number = 0; i < dataCnt; i++) {
         const random = Math.floor(Math.random() * 100);
-        arrX.push(i);
-        arrY.push(random);
+        arrData.push({ label: i, y: random });
       }
 
       let dataObj = {
-        type: "scatter",
-        x: arrX,
-        y: arrY,
-        mode: `${marker}`,
+        type: "line",
+        markerType: marker,
+        dataPoints: arrData,
       };
 
       dataSave.push(dataObj);
@@ -50,6 +47,17 @@ export default function LineChart_plotly() {
     }
   };
 
+  const options = {
+    title: {
+      text: "Line",
+    },
+    axisY: { title: "Y" },
+    axisX: { title: "X" },
+    width: window.screen.width - 250,
+    height: window.screen.height - 400,
+
+    data: data,
+  };
   return (
     <>
       <Form>
@@ -66,18 +74,7 @@ export default function LineChart_plotly() {
         </Button>
         <Link to="performance">퍼포먼스 메인 돌아가기</Link>
       </Form>
-
-      <Plot
-        data={data}
-        config={{
-          scrollZoom: true,
-        }}
-        layout={{
-          width: window.screen.width - 250,
-          height: window.screen.height - 400,
-          title: "Plotly",
-        }}
-      />
+      <CanvasJSChart options={options} />
     </>
   );
 }

@@ -12,7 +12,6 @@ export default function ScatterChart({ data }: DataProps) {
       },
     ],
   };
-  console.log(chartData);
   return (
     <div style={{ width: "25%", padding: "0 10px", display: "inline-block" }}>
       <Scatter type="scatter" data={chartData} />

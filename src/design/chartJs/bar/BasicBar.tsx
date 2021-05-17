@@ -12,7 +12,6 @@ export default function BasicBar({ data }: DataProps) {
       },
     ],
   };
-  console.log(chartData);
   return (
     <div style={{ width: "25%", padding: "0 10px", display: "inline-block" }}>
       <Bar type="bar" data={chartData} />
